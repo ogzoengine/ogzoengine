@@ -1,16 +1,3 @@
-Metadata-Version: 2.1
-Name: ogzoengine
-Version: 1.3.6.1
-Summary: basic pygame engine
-Author: Coguz
-License: Apache License, Version 2.0
-Classifier: License :: OSI Approved :: MIT License
-Classifier: Programming Language :: Python :: 3.10
-Classifier: Operating System :: OS Independent
-Requires-Python: >=3.10
-Description-Content-Type: text/markdown
-Provides-Extra: dev
-
 This game engine is based on pygame. Our goal is to make it easy for people, even those who don't know python or coding, to create games.
 
 If you want to get started with this game engine by creating a sample game,

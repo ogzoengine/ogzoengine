@@ -5,7 +5,7 @@ with open("ogzoengine/README.md", "r") as f:
 
 setup(
       name='ogzoengine',
-      version='1.3.5.4',
+      version='1.3.6.1',
       description='basic pygame engine',
       license='Apache License, Version 2.0',
       author='Coguz',
