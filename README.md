@@ -25,82 +25,43 @@ Download a code editor of your choice. Recommended code editors are:
 ****
 ## **Coding**
 
-First, we import the library and then add the screen and input process.
 ```
-import ogzoengine
+import BS.engine as bs
 
-screen = ogzoengine.GameEngine()
-input = ogzoengine.Input()
-```
+screen1 = bs.Screen()
 
-We set the size and title of the screen. The 1st value represents width, the 2nd value represents height, and the 3rd value represents the title.
-```
-screen.set_screen(800, 600, "Test Game")
-```
+# Variables
+width, height = 1200, 600
 
-We set the background color using the RGB code.
-```
-screen.set_background((0,0,0))
-```
+# Drawwing
+circle1 = bs.Circle(200,200,25,[255,255,255])
+line1 = bs.Line(200,300,100,150,[255,255,255],3)
+squ1 = bs.Square(500,500,45,45,[255,255,255])
+text1 = bs.Text(350,350,"Hello",None,20,(255,255,255))
 
-We create a function for the game loop.
-```
+saved = None
+# listener function
+def listener():
+    if bs.inputs(screen1.return_keys(),'a').return_key():
+        print("a clicked")
+
+# drawwing function
+def draw():
+    circle1.draw(screen1)
+    line1.draw(screen1)
+    squ1.draw(screen1)
+    text1.draw(screen1)
+
+# While function 
 def whiles():
-```
+    pass
 
-Inside the game loop function, we set the drawing basics.
-```
-                         # (start_x, start_y, x_end, y_end, rgb_code, thickness)
-    line1 = ogzoengine.Line(250, 300, 130, 130, (255,255,255), 5)
-                             # (x_position, y_position, size, rgb_code)
-    circle1 = ogzoengine.Circle(100, 200, 50, (255, 0, 0))
-                             # (x_position, y_position, x_size, y_size, rgb_code)
-    square1 = ogzoengine.Square(400, 400, 50, 50, square1_color)
-                            # (x_position, y_position, text)
-    #image1 = ogzoengine.Image(400, 200, "img.png")
-                         # (x_position, y_position, text, font_location, font_size, rgb_code)
-    text1 = ogzoengine.Text(50, 50, "No font text", None, 20, (255, 255, 255))
-```
-We draw the shapes.
-```
-    line1.draw(screen.screen)
-    circle1.draw(screen.screen)
-    square1.draw(screen.screen)
-    #image1.draw(screen.screen)
-    text1.draw(screen.screen)
-```
-We set the screen to clear when the ESC key is pressed.
-```
-                   #(check keyboard library for key codes)
-    if input.pressed('esc'):
-        # Colors the screen to the selected background and clears all drawings made up to that point.
-        screen.clear_screen()
-```
+# Using function
+screen1.use_drawing(draw)
+screen1.use_while(whiles)
+screen1.use_listener(listener)
 
 
-We specify the name of the function we want to repeat.
-```
-screen.use_while(whiles)
-```
-
-We create functions for touching and clicking the square.
-```
-    if square1.mouse_touch():
-       print("The mouse is touching the square")
-    if square1.mouse_clicked(screen.mouse_pressed, screen.mouse_click_type, 1):
-        print("The square is clicked")
-```
-
-We read the position and status of the mouse.
-```
-    # Read the mouse position
-    mouse_pos = screen.get_mouse_pos()
-    # Read the mouse status
-    mouse_type = screen.get_mouse_info()
-```
-
-
-Run the screen
-```
-screen.run()
+screen1.set_screen(width,height,"Engine test")
+screen1.run()
 ```
