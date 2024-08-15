@@ -26,23 +26,23 @@ Download a code editor of your choice. Recommended code editors are:
 ## **Coding**
 
 ```
-import BS.engine as bs
+import ogzoengine as og
 
-screen1 = bs.Screen()
+screen1 = og.Screen()
 
 # Variables
 width, height = 1200, 600
 
 # Drawwing
-circle1 = bs.Circle(200,200,25,[255,255,255])
-line1 = bs.Line(200,300,100,150,[255,255,255],3)
-squ1 = bs.Square(500,500,45,45,[255,255,255])
-text1 = bs.Text(350,350,"Hello",None,20,(255,255,255))
+circle1 = og.Circle(200,200,25,[255,255,255])
+line1 = og.Line(200,300,100,150,[255,255,255],3)
+squ1 = og.Square(500,500,45,45,[255,255,255])
+text1 = og.Text(350,350,"Hello",None,20,(255,255,255))
 
 saved = None
 # listener function
 def listener():
-    if bs.inputs(screen1.return_keys(),'a').return_key():
+    if og.inputs(screen1.return_keys(),'a').return_key():
         print("a clicked")
 
 # drawwing function
